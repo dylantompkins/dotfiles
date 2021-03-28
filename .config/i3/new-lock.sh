@@ -1,0 +1,32 @@
+#!/bin/bash
+
+i3lock \
+    -S 1 \
+    -B 1 \
+    --indicator \
+    --force-clock \
+    --indpos="x + (w / 2):y + (h / 2) + 70" \
+    --timepos="x + (w / 2):y + (h / 2)" \
+    --radius 20 \
+    --ring-width 5 \
+    --veriftext="" \
+    --wrongtext="" \
+    --no-modkeytext \
+    --line-uses-inside \
+    --insidecolor=ffffff00 \
+    --insidevercolor=ffffff00 \
+    --insidewrongcolor=ffffff00 \
+    --ringvercolor=757575ff \
+    --ringwrongcolor=8e0000ff \
+    --ringcolor=546e7aff \
+    --keyhlcolor=819ca9ff \
+    --bshlcolor=29434eff \
+    --noinputtext="" \
+    --time-font=SourceSansPro-Regular \
+    --date-font=SourceSansPro-Regular \
+    --timesize=80 \
+    --datesize=30 \
+    --timestr="%l:%M" \
+    --datestr="%A, %e %B %G" \
+    --timecolor=ffffff40 \
+    --datecolor=ffffff40
