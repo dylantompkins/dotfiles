@@ -2,7 +2,6 @@ configuration {
 /*	modi: "window,run,ssh";*/
 	modi: "window,run,ssh,drun";
 /*	width: 50;*/
-	width: 25;
 /*	lines: 15;*/
 /*	columns: 1;*/
 /*	font: "mono 12";*/
@@ -35,7 +34,6 @@ configuration {
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
-	sidebar-mode: true;
 /*	eh: 1;*/
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
@@ -60,7 +58,7 @@ configuration {
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 /*	theme: ;*/
-	theme: "Arc-Dark";
+	theme: "onedark";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/

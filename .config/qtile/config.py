@@ -26,10 +26,12 @@
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+
+import subprocess
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -78,7 +80,7 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),
+    Key([mod], "r", lazy.spawn("rofi -show drun"),
         desc="Spawn a command using a prompt widget"),
 ]
 
@@ -228,3 +230,17 @@ focus_on_window_activation = "smart"
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+@hook.subscribe.startup
+def startPicom():
+    """
+    Start the picom compositor when Qtile starts.
+    """
+    subprocess.run(["picom", "-b"])
+
+@hook.subscribe.startup
+def setWallpaper():
+    """
+    Sets my desktop wallpaper when qtile starts
+    """
+    subprocess.run(["feh", "--bg-fill", "Downloads/bigsur.jpg"])
