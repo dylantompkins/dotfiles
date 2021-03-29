@@ -1,0 +1,5 @@
+- need to copy to efi partition, having it here does nothing
+	- Example:
+	- mount efi partition at /boot/efi
+	- config is located at /boot/efi/EFI/refind/refind.conf
+- dependent on banner image being in the same directory as refind efi file

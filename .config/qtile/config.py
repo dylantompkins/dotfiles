@@ -102,7 +102,10 @@ for i in groups:
     ])
 
 layouts = [
-    layout.Columns(border_focus_stack='#d75f5f'),
+    layout.Columns(
+        border_focus_stack='#d75f5f',
+        margin=8,
+    ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -113,7 +116,9 @@ layouts = [
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
-    # layout.VerticalTile(),
+    layout.VerticalTile(
+        margin = 8
+    ),
     # layout.Zoomy(),
 ]
 
@@ -236,11 +241,18 @@ def startPicom():
     """
     Start the picom compositor when Qtile starts.
     """
-    subprocess.run(["picom", "-b"])
+    subprocess.Popen(["picom", "-b"])
 
 @hook.subscribe.startup
 def setWallpaper():
     """
     Sets my desktop wallpaper when qtile starts
     """
-    subprocess.run(["feh", "--bg-fill", "Downloads/bigsur.jpg"])
+    subprocess.Popen(["feh", "--bg-fill", "Photos/mac-backrounds/BigSur1.jpg"]).wait()
+
+@hook.subscribe.startup
+def startPolkit():
+    """
+    Run lxpolkit to start polkit in the backround when Qtile starts
+    """
+    subprocess.Popen(["lxpolkit"])
