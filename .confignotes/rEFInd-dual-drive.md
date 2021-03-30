@@ -2,13 +2,13 @@
 
 1.  Prerequisites
    
-   1. Regular Windows install on one drive (here that drive will be `/dev/sdb`)
+   1. Regular Windows install on one drive (here that drive will be `/dev/sdb`) 
    
-   2. Install Arch on the other drive (`/dev/sda` here) as instructed (and in UEFI mode) on the [Installation guide - ArchWiki](https://wiki.archlinux.org/index.php/installation_guide) except:
+   2. Install Arch on the other drive (`/dev/sda` here) as instructed (and in UEFI mode) on the [Installation guide - ArchWiki](https://wiki.archlinux.org/index.php/installation_guide) except: 
       
-      1. Do not create an EFI partition on the Arch drive, just swap and root
+      1. Do not create an EFI partition on the Arch drive, just swap and root 
    
-   3. Identify the Windows WFI partition (in this case `/dev/sdb2`)
+   3. - 1. Identify the Windows EFI partition (in this case `/dev/sdb2`)
 
 2. In live environment 
    
