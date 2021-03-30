@@ -8,7 +8,7 @@
       
       1. Do not create an EFI partition on the Arch drive, just swap and root 
    
-   3. - 1. Identify the Windows EFI partition (in this case `/dev/sdb2`)
+   3. Identify the Windows EFI partition (in this case `/dev/sdb2`)
 
 2. In live environment 
    
@@ -32,4 +32,10 @@
 
 5. You should be greeted with a refind screen on boot that displays both the Arch and Windows icons. Congrats!
 
+---
 
+1. blah
+   
+   1. foo
+   
+   2. bar
