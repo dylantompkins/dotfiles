@@ -105,6 +105,7 @@ layouts = [
     layout.Columns(
         border_focus_stack='#d75f5f',
         margin=8,
+        border_focus='#61afef',
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -117,7 +118,8 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     layout.VerticalTile(
-        margin = 8
+        margin = 8,
+        border_focus='#61afef',
     ),
     # layout.Zoomy(),
 ]
