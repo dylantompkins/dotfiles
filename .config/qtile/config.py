@@ -80,8 +80,8 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawn("rofi -show drun"),
-        desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Show the rofi prompt"),
+    Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the screen using light-locker"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -231,22 +231,35 @@ focus_on_window_activation = "smart"
 wmname = "LG3D"
 
 @hook.subscribe.startup
+def startup():
+    """
+    Call other functions I want to run on startup.
+    """
+    startPicom()
+    setWallpaper()
+    startPolkit()
+    startLock()
+
 def startPicom():
     """
-    Start the picom compositor when Qtile starts.
+    Start the picom compositor.
     """
     subprocess.Popen(["picom", "-b"])
 
-@hook.subscribe.startup
 def setWallpaper():
     """
-    Sets my desktop wallpaper when qtile starts
+    Set the desktop wallpaper.
     """
     subprocess.Popen(["feh", "--bg-fill", "Photos/mac-backrounds/BigSur1.jpg"]).wait()
 
-@hook.subscribe.startup
 def startPolkit():
     """
-    Run lxpolkit to start polkit in the backround when Qtile starts
+    Run lxpolkit to start polkit in the backround.
     """
     subprocess.Popen(["lxpolkit"])
+
+def startLock():
+    """
+    Start light-lock to enable locking system to the lightdm login screen.
+    """
+    subprocess.Popen(["light-locker"])
