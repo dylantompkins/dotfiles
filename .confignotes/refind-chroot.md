@@ -6,3 +6,5 @@
 4. start and boot arch using `F2` in refind menu to choose `Boot with minimal options`
 5. login to system in tty and then run `mkrlconf`
 6. reboot and arch should appear normally
+
+[forum post that led me to this method](https://bbs.archlinux.org/viewtopic.php?id=221527)
