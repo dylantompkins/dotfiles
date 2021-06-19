@@ -1,3 +1,5 @@
+*these instructions are no longer relevant, see refind-chroot.md*
+
 # How to Install rEFInd for Dual-Drive Dual-Booting Windows and Arch Linux
 
 1. Prerequisites
