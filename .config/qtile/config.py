@@ -205,7 +205,7 @@ wmname = "LG3D"
 @hook.subscribe.startup
 def startup():
     """
-    Call other functions I want to run on startup.
+    Call other functions I want to run every time I restart qtile.
     """
     startPicom()
     setWallpaper()
