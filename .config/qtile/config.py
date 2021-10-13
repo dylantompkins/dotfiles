@@ -127,7 +127,7 @@ layouts = [
 
 widget_defaults = dict(
     font='SourceSansPro',
-    fontsize=14,
+    fontsize=20,
     padding=2,
 )
 extension_defaults = widget_defaults.copy()
@@ -145,9 +145,12 @@ def initMyBar():
             ),
             widget.WindowName(),
             widget.Systray(),
+            widget.Battery(
+                format='| {percent:2.0%} |'
+            ),
             widget.Clock(format='%a %d-%m-%Y %I:%M')
         ],
-        24,
+        30,
         background=onedark.colors['black'],
         opacity=0.8
     )
@@ -202,16 +205,6 @@ focus_on_window_activation = "smart"
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
-@hook.subscribe.startup
-def startup():
-    """
-    Call other functions I want to run every time I restart qtile.
-    """
-    startPicom()
-    setWallpaper()
-    startPolkit()
-    startLock()
-
 def startPicom():
     """
     Start the picom compositor.
@@ -235,3 +228,20 @@ def startLock():
     Start light-lock to enable locking system to the lightdm login screen.
     """
     subprocess.Popen(["light-locker"])
+
+def startNMApplet():
+    """
+    Start network-mamanger-applet which creates a tray icon to manange network connections.
+    """
+    subprocess.Popen(["nm-applet"])
+
+@hook.subscribe.startup
+def startup():
+    """
+    Call other functions I want to run every time I restart qtile.
+    """
+    startPicom()
+    setWallpaper()
+    startPolkit()
+    startLock()
+    startNMApplet()
