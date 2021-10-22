@@ -209,13 +209,13 @@ def startPicom():
     """
     Start the picom compositor.
     """
-    subprocess.Popen(["picom", "-b"])
+    subprocess.Popen(["picom"])
 
 def setWallpaper():
     """
     Set the desktop wallpaper.
     """
-    subprocess.Popen(["feh", "--bg-fill", "Photos/mac-backrounds/BigSur1.jpg"]).wait()
+    subprocess.Popen(["nitrogen", "--restore"])
 
 def startPolkit():
     """
