@@ -142,16 +142,20 @@ def initMyBar():
     """
     return bar.Bar(
         [
+            widget.Spacer(length=50),
             widget.CurrentLayout(),
             widget.GroupBox(
                 highlight_method='line'
             ),
+            widget.Spacer(),
             widget.WindowName(),
+            widget.Spacer(),
             widget.Systray(),
             widget.Battery(
                 format='| {percent:2.0%} |'
             ),
-            widget.Clock(format='%a %d-%m-%Y %I:%M')
+            widget.Clock(format='%a %d-%m-%Y %I:%M'),
+            widget.Spacer(length=50),
         ],
         30,
         background=onedark.colors['black'],
