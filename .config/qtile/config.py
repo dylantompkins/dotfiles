@@ -82,7 +82,8 @@ keys = [
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Show the rofi prompt"),
-    Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the screen using light-locker"),
+    Key([mod], "l", lazy.spawn("light-locker-command -l"),
+        desc="Lock the screen using light-locker"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -107,6 +108,7 @@ layouts = [
         border_focus_stack='#d75f5f',
         margin=8,
         border_focus=onedark.colors['blue'],
+        num_columns=3,
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -119,7 +121,7 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     layout.VerticalTile(
-        margin = 8,
+        margin=8,
         border_focus='#61afef',
     ),
     # layout.Zoomy(),
@@ -154,6 +156,7 @@ def initMyBar():
         background=onedark.colors['black'],
         opacity=0.8
     )
+
 
 screens = [
     Screen(
@@ -205,11 +208,13 @@ focus_on_window_activation = "smart"
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
+
 def startPicom():
     """
     Start the picom compositor.
     """
     subprocess.Popen(["picom"])
+
 
 def setWallpaper():
     """
@@ -217,23 +222,27 @@ def setWallpaper():
     """
     subprocess.Popen(["nitrogen", "--restore"])
 
+
 def startPolkit():
     """
     Run lxpolkit to start polkit in the backround.
     """
     subprocess.Popen(["lxpolkit"])
 
+
 def startLock():
     """
     Start light-lock to enable locking system to the lightdm login screen.
     """
-    subprocess.Popen(["light-locker"])
+    subprocess.Popen(["light-locker", "--no-lock-on-lid"])
+
 
 def startNMApplet():
     """
     Start network-mamanger-applet which creates a tray icon to manange network connections.
     """
     subprocess.Popen(["nm-applet"])
+
 
 @hook.subscribe.startup
 def startup():

@@ -11,3 +11,5 @@
     cmd = code --wait --diff $LOCAL $REMOTE
 [core]
 	editor = nano
+[safe]
+	directory = /opt/flutter
