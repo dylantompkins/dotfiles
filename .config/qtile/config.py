@@ -121,10 +121,10 @@ layouts = [
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
-    layout.VerticalTile(
-        margin=8,
-        border_focus='#61afef',
-    ),
+    # layout.VerticalTile(
+    #     margin=8,
+    #     border_focus='#61afef',
+    # ),
     # layout.Zoomy(),
 ]
 
