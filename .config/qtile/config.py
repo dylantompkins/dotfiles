@@ -155,16 +155,13 @@ def initMyBar():
         ],
         30,
         background=onedark.colors['black'],
-        opacity=0.8
+        opacity=0.8,
     )
 
 
 screens = [
     Screen(
-        bottom=initMyBar()
-    ),
-    Screen(
-        bottom=initMyBar()
+        top=initMyBar()
     ),
     Screen(
         bottom=initMyBar()
