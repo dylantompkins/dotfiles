@@ -108,6 +108,7 @@ layouts = [
         border_focus_stack='#d75f5f',
         margin=8,
         border_focus=onedark.colors['blue'],
+        border_normal=onedark.colors['grey'],
         num_columns=3,
     ),
     layout.Max(),
