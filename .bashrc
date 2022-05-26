@@ -7,6 +7,7 @@
 
 alias ls='ls --color=auto'
 alias la='ls -la --color=auto'
+alias ranger='. ranger'
 
 # SSH aliases
 alias ssh-unix1='ssh dltompki@unix1.csc.calpoly.edu'

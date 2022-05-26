@@ -82,7 +82,7 @@ keys = [
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Show the rofi prompt"),
-    Key([mod], "l", lazy.spawn("light-locker-command -l"),
+    Key([mod], "l", lazy.spawn("dm-tool switch-to-greeter"),
         desc="Lock the screen using light-locker"),
 ]
 
