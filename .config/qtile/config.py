@@ -32,7 +32,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 import subprocess
-import onedark
+import verdant
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -107,8 +107,8 @@ layouts = [
     layout.Columns(
         border_focus_stack='#d75f5f',
         margin=8,
-        border_focus=onedark.colors['blue'],
-        border_normal=onedark.colors['grey'],
+        border_focus=verdant.colors['green'],
+        border_normal=verdant.colors['grey'],
         num_columns=3,
     ),
     layout.Max(),
@@ -158,7 +158,7 @@ def initMyBar():
             widget.Spacer(length=50),
         ],
         30,
-        background=onedark.colors['black'],
+        background=verdant.colors['black'],
         opacity=0.8,
     )
 
