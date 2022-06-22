@@ -17,6 +17,8 @@ settings:
     - bookmarks
     - history
     - filesystem
+  content.blocking.method:
+    global: both
   content.pdfjs:
     global: true
   fonts.default_family:

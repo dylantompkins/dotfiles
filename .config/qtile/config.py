@@ -257,3 +257,4 @@ def startup():
     startPolkit()
     startLock()
     startNMApplet()
+
