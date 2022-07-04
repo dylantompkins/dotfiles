@@ -21,6 +21,8 @@ settings:
     global: both
   content.pdfjs:
     global: true
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: true
   fonts.default_family:
     global: Source Sans Pro
   scrolling.smooth:

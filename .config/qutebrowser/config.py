@@ -552,6 +552,7 @@ c.colors.tabs.selected.odd.fg = verdant['grey']
 # selective inversion of everything": Combines the two variants   above.
 ## Type: Bool
 # c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = False
 
 # Render all colors as grayscale. This only has an effect when
 # `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or

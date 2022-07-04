@@ -359,7 +359,7 @@
         "name": "Comment",
         "scope": "comment",
         "settings": {
-          "foreground": "#616E88"
+          "foreground": "#D8E9DC"
         }
       },
       {
@@ -538,7 +538,7 @@
           "punctuation.start.definition.comment"
         ],
         "settings": {
-          "foreground": "#616E88"
+          "foreground": "#D8E9DC"
         }
       },
       {
@@ -580,7 +580,7 @@
         "name": "String",
         "scope": "string",
         "settings": {
-          "foreground": "#81A1C1"
+          "foreground": "#D8E9DC"
         }
       },
       {
