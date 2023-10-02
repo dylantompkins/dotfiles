@@ -1050,6 +1050,7 @@ c.colors.webpage.darkmode.enabled = False
 # default) can be used in the download prompt.
 ## Type: Bool
 # c.content.pdfjs = False
+c.content.pdfjs = False
 
 # Allow websites to request persistent storage quota via
 # `navigator.webkitPersistentStorage.requestQuota`.
@@ -1211,7 +1212,7 @@ c.colors.webpage.darkmode.enabled = False
 # initiating the download, not the URL the download itself is coming
 # from. It's not recommended to set this setting to false globally.
 ## Type: Bool
-# c.downloads.prevent_mixed_content = True
+c.downloads.prevent_mixed_content = False
 
 # Duration (in milliseconds) to wait before removing finished downloads.
 # If set to -1, downloads are never removed.
@@ -1226,6 +1227,7 @@ c.colors.webpage.darkmode.enabled = False
 # Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
 # c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['kitty', 'nvim', '{}']
 
 # Encoding to use for the editor.
 ## Type: Encoding

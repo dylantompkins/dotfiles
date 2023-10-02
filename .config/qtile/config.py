@@ -73,8 +73,9 @@ keys = [
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "backslash", lazy.spawn("qutebrowser"), desc="Launch qutebrowser"),
+    Key([mod], "f", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "d", lazy.spawn("brave"), desc="Launch Brave Browser"),
+    Key([mod], "s", lazy.spawn("bwmenu"), desc="Launch bitwarden rofi menu"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -83,8 +84,8 @@ keys = [
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Show the rofi prompt"),
-    Key([mod], "l", lazy.spawn("dm-tool switch-to-greeter"),
-        desc="Lock the screen using light-locker"),
+    Key([mod], "q", lazy.spawn("i3lock -B 20 --bar-indicator -k"),
+        desc="Lock the screen using i3lock-color"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -155,7 +156,7 @@ def initMyBar():
             widget.Battery(
                 format='| {percent:2.0%} |'
             ),
-            widget.Clock(format='%a %d-%m-%Y %I:%M'),
+            widget.Clock(format='%a %Y-%m-%d %H:%M'),
             widget.Spacer(length=50),
         ],
         30,
@@ -233,19 +234,23 @@ def startPolkit():
     subprocess.Popen(["lxpolkit"])
 
 
-def startLock():
-    """
-    Start light-lock to enable locking system to the lightdm login screen.
-    """
-    subprocess.Popen(["light-locker", "--no-lock-on-lid"])
-
-
 def startNMApplet():
     """
     Start network-mamanger-applet which creates a tray icon to manange network connections.
     """
     subprocess.Popen(["nm-applet"])
 
+def startWired():
+    """
+    Start the wired notification daemon
+    """
+    subprocess.Popen(["wired"])
+
+def xrandrConfig(arg):
+    """
+    Setup monitor configuration
+    """
+    subprocess.Popen(["./home/dylan/.screenlayout/startup.sh"])
 
 @hook.subscribe.startup
 def startup():
@@ -257,4 +262,4 @@ def startup():
     startPolkit()
     startLock()
     startNMApplet()
-
+    startWired()

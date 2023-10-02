@@ -19,10 +19,30 @@ settings:
     - filesystem
   content.blocking.method:
     global: both
+  content.geolocation:
+    https://dyce-346806.web.app: true
+    https://pgealerts.alerts.pge.com: true
+    https://www.dickssportinggoods.com: true
+    https://www.google.com: true
+    https://www.jared.com: false
+    https://www.kia.com: true
+    https://www.zillow.com: true
+  content.media.audio_capture:
+    https://meet.google.com: true
+  content.media.audio_video_capture:
+    https://meet.google.com: true
+  content.media.video_capture:
+    https://meet.google.com: true
+  content.notifications.enabled:
+    https://meet.google.com: true
+    https://www.netflix.com: false
   content.pdfjs:
     global: true
   content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: true
     https://mail.google.com?extsrc=mailto&url=%25s: true
+    https://outlook.office.com?mailtouri=%25s: true
+    https://outlook.office365.com?mailtouri=%25s: true
   fonts.default_family:
     global: Source Sans Pro
   scrolling.smooth:
